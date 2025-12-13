@@ -2,7 +2,7 @@
 
 A daily UFC fighter guessing game inspired by Wordle. Test your MMA knowledge by identifying the mystery fighter through strategic guesses!
 
-![OCTADLE Gameplay](.<img width="1580" height="917" alt="OCTADLE_screen_shot" src="https://github.com/user-attachments/assets/9d8af396-5ec8-4eb7-baeb-0114956fc0cc" />)
+<img width="1580" height="917" alt="OCTADLE_screen_shot" src="https://github.com/user-attachments/assets/9d8af396-5ec8-4eb7-baeb-0114956fc0cc" />
 
 ## 🎮 How to Play
 

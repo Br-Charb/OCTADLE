@@ -17,12 +17,11 @@ function App() {
   const [gameWon, setGameWon] = useState<boolean>(false);
 
   useEffect (() => {
-    fetch('/data/FighterInfo.json')
+    fetch('http://localhost:4000/fighters')
     .then(response => response.json())
     .then(data => {
       setAllFighters(data);
-      const todaysFighterIndex = Math.floor(Math.random() * 242);
-      const selectFighter = data[todaysFighterIndex];
+      const selectFighter = data[0];
       setTodaysFighter(selectFighter)
     })
   }, [])

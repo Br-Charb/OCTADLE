@@ -8,13 +8,13 @@ import { Timer } from './components/Timer';
 
 function App() {
 
-  const [guessed, setGuessed] = useState(0);
-  const [todaysFighter, setTodaysFighter] = useState(null);
-  const [allFighters, setAllFighters] = useState(null);
-  const [fightersGuessed, setFightersGuessed] = useState([null, null, null, null, null, null, null, null]);
-  const [gameComplete, setGameComplete] = useState(false);
-  const [showSilhoutte, setShowSilhoutte] = useState(false);
-  const [gameWon, setGameWon] = useState(false);
+  const [guessed, setGuessed] = useState<number>(0);
+  const [todaysFighter, setTodaysFighter] = useState<any>(null);
+  const [allFighters, setAllFighters] = useState<any>(null);
+  const [fightersGuessed, setFightersGuessed] = useState<any>([null, null, null, null, null, null, null, null]);
+  const [gameComplete, setGameComplete] = useState<boolean>(false);
+  const [showSilhoutte, setShowSilhoutte] = useState<boolean>(false);
+  const [gameWon, setGameWon] = useState<boolean>(false);
 
   useEffect (() => {
     fetch('/data/FighterInfo.json')
@@ -27,23 +27,22 @@ function App() {
     })
   }, [])
 
-  const updateGuessedFighters = (fighter => {
+  const updateGuessedFighters = (fighter: any) => {
     let tempFighters = [...fightersGuessed];
     tempFighters[guessed] = fighter;
     setFightersGuessed(tempFighters);
     setGuessed(guessed+1);
     console.log(todaysFighter);
     checkGameOver(fighter);
-  })
+  }
 
-  const checkGameOver = (currFighter => {
+  const checkGameOver = (currFighter: any) => {
     if (currFighter === todaysFighter || (guessed + 1) === 8) {
       if (currFighter === todaysFighter) setGameWon(true);
       setGameComplete(true);
       setShowSilhoutte(true);
     }
-
-  });
+  }
 
   return (
     <div className="App">

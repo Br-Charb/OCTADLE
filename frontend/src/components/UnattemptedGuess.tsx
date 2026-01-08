@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const UnattemptedGuess = ({ guessNum }) => {
+interface inputUnattemptedGuess {
+    guessNum: number;
+}
+
+export const UnattemptedGuess = ({ guessNum }: inputUnattemptedGuess) => {
     return (
         <div className='Unattempted-guess'>
             <p>Guess {guessNum}</p>
